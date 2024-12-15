@@ -9,18 +9,21 @@ life = 6
 choosen_word = choice(hangman_words)
 anonymous_word = ["_" for _ in range(0, len(choosen_word))]
 game = True
+letters_test = set()
 print(choosen_word)
 
 while game:
     print(anonymous_word)
     letter = input("Enter your letter: ")
 
-    if letter in anonymous_word:
+    if letter in letters_test:
         print("You'r already put this letter.")
+        continue
 
     for i in range(0, len(choosen_word)):
         if letter == choosen_word[i]:
             anonymous_word[i] = letter
+            letters_test.add(letter)
 
     if "_" not in anonymous_word:
         print("NICE ONE")
@@ -28,6 +31,7 @@ while game:
 
     if letter not in choosen_word:
         print("Not in the word")
+        letters_test.add(letter)
         life -= 1
         if life == 0:
             game = False
