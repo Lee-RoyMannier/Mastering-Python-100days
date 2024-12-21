@@ -6,12 +6,17 @@ class Pad(Turtle):
         self.shape("square")
         self.color("white")
         self.setheading(90)
-        self.shapesize(2,5)
+        self.shapesize(stretch_wid=1, stretch_len=5)
         self.penup()
         self.goto(x_cord, y_cord)
 
     def move_up(self):
-        self.forward(10)
+        self.forward(30)
 
     def move_down(self):
-        self.backward(10)
+        self.backward(30)
+
+    def reset_pad(self, x_cord, y_cord):
+        self.penup()
+        self.goto(x_cord, y_cord)
+
