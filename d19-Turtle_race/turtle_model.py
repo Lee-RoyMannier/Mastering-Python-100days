@@ -3,7 +3,7 @@ from random import randint
 
 class TurtleModel(Turtle):
     def __init__(self, xcor, ycor, color):
-        Turtle.__init__(self)
+        super().__init__()
         self.shape('turtle')
         self.color(color)
         self.penup()
