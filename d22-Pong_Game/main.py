@@ -31,7 +31,7 @@ while True:
 
     if ball.distance(left_paddle) < 40 and ball.xcor() < -320 or ball.distance(right_paddle) < 40 and ball.xcor() > 320:
         ball.bounce_x()
-<
+
     if ball.xcor() > 380:
         left_paddle.reset_pad(-350,0)
         right_paddle.reset_pad(350, 0)
