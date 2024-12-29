@@ -2,7 +2,7 @@ import tkinter as tk
 
 
 def convert():
-    converting = int(mile_input.get()) * 2
+    converting = float(mile_input.get()) * 2
     converter_label["text"] = converting
 
 
