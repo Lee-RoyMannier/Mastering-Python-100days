@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from random import choice, shuffle
-
+import pyperclip
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -98,9 +98,10 @@ def save_data():
         if is_valided == "yes":
             with open("data.txt", "a") as file:
                 file.write(f"{website} | {email} | {pwd}\n")
-
+            pyperclip.copy(pwd)
             website_label.delete(0, tk.END)
             password_entry.delete(0, tk.END)
+
 
 
 # ---------------------------- UI SETUP ------------------------------- #
