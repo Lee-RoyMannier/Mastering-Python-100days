@@ -113,11 +113,29 @@ def save_data():
                 data.update(new_Data)
                 with open("data.json", "w") as file:
                     json.dump(data, file, indent=4)
+            finally:
+                pyperclip.copy(pwd)
+                website_label.delete(0, tk.END)
+                password_entry.delete(0, tk.END)
 
-            pyperclip.copy(pwd)
-            website_label.delete(0, tk.END)
-            password_entry.delete(0, tk.END)
 
+def search_password():
+    website = website_label.get()
+
+    try:
+        with open("data.json", "r") as file:
+            data = json.load(file)
+            password_site = data[website]
+    except FileNotFoundError as error:
+        messagebox.showerror("Error", "No data save")
+        return
+    except KeyError as error:
+        messagebox.showerror("Error", f"not {website} in the database")
+        return
+    else:
+        password = password_site["pwd"]
+        email = password_site["email"]
+        messagebox.showinfo("Successful", f"Your info for {website} \n password : {password} \n email : {email}")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -138,6 +156,8 @@ label_website.grid(column=0, row=1)
 website_label = tk.Entry(screen, bg="white", fg="black", highlightthickness=0, width=35)
 website_label.focus()
 website_label.grid(column=1, row=1, columnspan=2, sticky="EW")
+search_website = tk.Button(text="Search", bg="white", fg="black", command=search_password)
+search_website.grid(column=2, row=1, sticky="EW")
 
 # Username zone
 email = tk.Label(screen, text="Email/Username", bg="white", fg="black")
