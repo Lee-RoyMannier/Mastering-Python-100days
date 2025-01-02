@@ -3,8 +3,8 @@ from random import randint, choice
 import pandas as pd
 from datetime import datetime
 
-EMAIl = "baltarzeasy@gmail.com"
-PASSWORD = "nhnh zttc hxeq zbnd"
+EMAIl = MAIL
+PASSWORD = PASSWORD
 
 date = datetime.today()
 actual_date = (date.month, date.day)
