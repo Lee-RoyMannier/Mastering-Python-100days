@@ -50,7 +50,7 @@ MY_LAT = 43.709422
 MY_LGN = -1.055488
 
 while True:
-    time.sleepl(60)
+    time.sleep(60)
     if is_iss_in_my_city() and is_is_dark():
         send_mail()
 
