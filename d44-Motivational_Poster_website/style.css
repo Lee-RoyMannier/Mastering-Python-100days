@@ -1,0 +1,26 @@
+body {
+    background: black;
+}
+
+.img-motiv {
+    border: solid white 5px;
+}
+
+.white {
+    color: white
+}
+
+.center {
+    width:50%;
+    margin-left: 25%
+}
+
+h1, p {
+    text-align: center
+}
+h1 {
+    text-transform: uppercase;
+}
+img {
+    width: 100%
+}
