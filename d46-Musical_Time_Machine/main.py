@@ -29,7 +29,7 @@ else:
         redirect_uri="http://example.com",
         show_dialog=True,
         cache_path="token.txt",
-        username=USER NAME
+        username="Lee Roy"
     ))
     song_urls = []
     user_id = sp.current_user()["id"]
